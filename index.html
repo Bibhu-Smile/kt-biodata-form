@@ -2,158 +2,161 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Interview Biodata Form — KT Global School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>KT Global School - Interview Form</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="header">
-  <div class="rule-gold"></div>
-  <div class="letterhead">
-    <div class="crest-wrap">
-      <img src="assets/logo.png" alt="School logo" id="logoImg"
-           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'crest',textContent:'KT'}))">
-    </div>
-    <div class="school-block">
-      <p class="eyebrow">Est. Khordha, Odisha</p>
-      <h1 id="schoolName">KT Global School</h1>
-      <p id="schoolMeta">Loading…</p>
-    </div>
-  </div>
-  <div class="rule-navy"></div>
-  <div class="sub">Interview Biodata Form</div>
+<div class="topbar">
+  <img src="assets/logo.png" alt="KTGS Logo" id="logoImg" class="topbar-logo"
+       onerror="this.style.display='none'">
+  <h1>KT GLOBAL SCHOOL</h1>
+  <p>Interview Biodata Form</p>
 </div>
 
 <div class="wrap">
 
   <div id="formStage">
 
-    <p class="intro-note">
-      Please fill this form carefully. Fields marked <b>*</b> are mandatory.
-      Once submitted, our HR team will print your form and share it with the interview panel.
-    </p>
-
     <form id="biodataForm" novalidate>
 
       <!-- 1. General Information -->
       <div class="card">
-        <div class="section-title"><span class="num">I</span><h2>General Information</h2></div>
+        <div class="section-title"><span class="emoji">📋</span><h2>1. General Information <small>(Fill in CAPITAL LETTERS)</small></h2></div>
 
         <div class="field">
-          <label>Name of the Applicant <span class="req">*</span></label>
-          <input type="text" id="applicantName" required style="text-transform:uppercase" placeholder="FULL NAME IN CAPITALS">
+          <label>Post Applied For <span class="req">*</span></label>
+          <select id="postApplied" required>
+            <option value="">— Select a Post —</option>
+            <optgroup label="📚 Academic">
+              <option>PPT</option>
+              <option>PRT</option>
+              <option>TGT</option>
+              <option>PGT</option>
+              <option>Entrance Faculty</option>
+              <option>Principal</option>
+              <option>Vice-Principal</option>
+              <option>Academic-Coordinator</option>
+              <option>Others (Academic)</option>
+            </optgroup>
+            <optgroup label="💼 Non-Academic">
+              <option>Telecaller</option>
+              <option>Counsellor</option>
+              <option>PRE</option>
+              <option>PRM</option>
+              <option>HR</option>
+              <option>Business</option>
+              <option>Administrative</option>
+              <option>Others (Non-Academic)</option>
+            </optgroup>
+          </select>
+          <p class="hint">Select the post you are applying for</p>
         </div>
 
         <div class="field">
-          <label>Father's / Husband's Name <span class="req">*</span></label>
+          <label>Name of Applicant <span class="req">*</span></label>
+          <input type="text" id="applicantName" required style="text-transform:uppercase">
+        </div>
+
+        <div class="field">
+          <label>Father / Husband Name <span class="req">*</span></label>
           <input type="text" id="fatherHusbandName" required style="text-transform:uppercase">
         </div>
 
         <div class="row2">
           <div class="field">
-            <label>Date of Birth <span class="req">*</span></label>
+            <label>D.O.B. (DD/MM/YYYY) <span class="req">*</span></label>
             <input type="date" id="dob" required>
           </div>
           <div class="field">
-            <label>Age (as on 1st Jan 2026) <span class="req">*</span></label>
-            <input type="number" id="age" min="16" max="70" required>
+            <label>Age (as on 1st Jan 2026)</label>
+            <input type="number" id="age" min="16" max="70">
           </div>
         </div>
 
         <div class="row2">
           <div class="field">
-            <label>Category</label>
-            <select id="category">
-              <option value="">-- Select --</option>
-              <option>General</option>
-              <option>OBC</option>
-              <option>SC</option>
-              <option>ST</option>
-              <option>EWS</option>
-              <option>Other</option>
+            <label>Blood Group <span class="req">*</span></label>
+            <select id="bloodGroup" required>
+              <option value="">Select Blood Group</option>
+              <option>A+</option><option>A-</option>
+              <option>B+</option><option>B-</option>
+              <option>O+</option><option>O-</option>
+              <option>AB+</option><option>AB-</option>
             </select>
           </div>
+          <div class="field">
+            <label>Category <span class="req">*</span></label>
+            <select id="category" required>
+              <option value="">Select</option>
+              <option>ST</option>
+              <option>SC</option>
+              <option>OBC</option>
+              <option>GEN</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row2">
           <div class="field">
             <label>Religion</label>
-            <select id="religion">
-              <option value="">-- Select --</option>
-              <option>Hindu</option>
-              <option>Muslim</option>
-              <option>Christian</option>
-              <option>Sikh</option>
-              <option>Buddhist</option>
-              <option>Jain</option>
-              <option>Other</option>
-              <option>Prefer not to say</option>
-            </select>
+            <input type="text" id="religion">
+          </div>
+          <div class="field">
+            <label>Nationality</label>
+            <input type="text" id="nationality" value="Indian">
           </div>
         </div>
 
         <div class="row2">
-          <div class="field">
-            <label>Nationality <span class="req">*</span></label>
-            <select id="nationality" required>
-              <option value="">-- Select --</option>
-              <option selected>Indian</option>
-              <option>Other</option>
-            </select>
-          </div>
           <div class="field">
             <label>Gender <span class="req">*</span></label>
             <select id="gender" required>
-              <option value="">-- Select --</option>
+              <option value="">Select</option>
               <option>Male</option>
               <option>Female</option>
-              <option>Other</option>
+              <option>Others</option>
             </select>
           </div>
-        </div>
-
-        <div class="row2">
           <div class="field">
             <label>Marital Status</label>
             <select id="maritalStatus">
-              <option value="">-- Select --</option>
-              <option>Single</option>
+              <option value="">Select</option>
+              <option>Unmarried</option>
               <option>Married</option>
               <option>Divorced</option>
               <option>Widowed</option>
             </select>
           </div>
-          <div class="field">
-            <label>Hobbies</label>
-            <input type="text" id="hobbies" placeholder="e.g. Reading, Music">
-          </div>
         </div>
 
         <div class="field">
-          <label>Permanent Address <span class="req">*</span></label>
-          <textarea id="permanentAddress" required></textarea>
+          <label>Hobbies</label>
+          <input type="text" id="hobbies">
+        </div>
+
+        <div class="field">
+          <label>Permanent Address</label>
+          <textarea id="permanentAddress"></textarea>
         </div>
 
         <div class="checkline" style="margin-bottom:10px;">
           <input type="checkbox" id="sameAddress">
-          <label for="sameAddress" style="font-weight:400;">Address for Communication is the same as Permanent Address</label>
+          <label for="sameAddress" style="font-weight:400;">Same as Permanent Address</label>
         </div>
 
         <div class="field" id="commAddressField">
-          <label>Address for Communication <span class="req">*</span></label>
-          <textarea id="communicationAddress" required></textarea>
+          <label>Address for Communication</label>
+          <textarea id="communicationAddress"></textarea>
         </div>
 
-        <div class="row2">
-          <div class="field">
-            <label>Mobile No. (Primary) <span class="req">*</span></label>
-            <input type="tel" id="mobile1" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number">
-          </div>
-          <div class="field">
-            <label>Mobile No. (Alternate)</label>
-            <input type="tel" id="mobile2" pattern="[0-9]{10}" maxlength="10">
-          </div>
+        <div class="field">
+          <label>Mobile No. <span class="req">*</span></label>
+          <input type="tel" id="mobile1" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number">
         </div>
 
         <div class="field">
@@ -161,99 +164,104 @@
           <input type="email" id="email" required>
         </div>
 
-        <div class="row2">
-          <div class="field">
-            <label>Aadhaar No.</label>
-            <input type="text" id="aadhaar" pattern="[0-9]{12}" maxlength="12" placeholder="12-digit number">
-          </div>
-          <div class="field">
-            <label>PAN No.</label>
-            <input type="text" id="pan" maxlength="10" style="text-transform:uppercase" placeholder="ABCDE1234F">
-          </div>
+        <div class="field">
+          <label>Aadhaar No. <span class="req">*</span></label>
+          <input type="text" id="aadhaar" required pattern="[0-9]{12}" maxlength="12" placeholder="12-digit number">
+        </div>
+
+        <div class="field">
+          <label>PAN No.</label>
+          <input type="text" id="pan" maxlength="10" style="text-transform:uppercase" placeholder="ABCDE1234F">
         </div>
       </div>
 
       <!-- 2. Educational Qualifications -->
       <div class="card">
-        <div class="section-title"><span class="num">II</span><h2>Educational Qualifications</h2></div>
+        <div class="section-title"><span class="emoji">🎓</span><h2>2. Educational Qualifications</h2></div>
         <div class="table-scroll">
           <table class="gridtable" id="eduTable">
             <thead><tr>
-              <th>Qualification</th><th>Year of Passing</th><th>Subjects Offered</th><th>Board / University</th><th>Marks % / CGPA</th>
+              <th>Qualification</th><th>Year</th><th>Subjects</th><th>Board / University</th><th>Marks % / CGPA</th>
             </tr></thead>
-            <tbody id="eduTableBody"><!-- rows injected by JS --></tbody>
+            <tbody id="eduTableBody"></tbody>
           </table>
         </div>
-        <p class="hint" style="margin-top:6px;">Secondary and Senior Secondary details are mandatory. Fill others if applicable.</p>
       </div>
 
       <!-- 3. Extra Qualification -->
       <div class="card">
-        <div class="section-title"><span class="num">III</span><h2>Extra Qualification (if any)</h2></div>
-        <div class="table-scroll">
-          <table class="gridtable" id="extraQualTable">
-            <thead><tr>
-              <th>Qualification</th><th>Specialization</th><th>Year</th><th>University</th><th>Marks %/CGPA</th><th>Other Info</th><th></th>
-            </tr></thead>
-            <tbody id="extraQualBody"></tbody>
-          </table>
+        <div class="section-title"><span class="emoji">📝</span><h2>3. Extra Qualification (if any)</h2></div>
+        <div class="field">
+          <textarea id="extraQual" placeholder='You may combine details (e.g. "MCA, 2020, Utkal Univ, 78%")'></textarea>
         </div>
-        <button type="button" class="btn-add" id="addExtraQualRow">+ Add row</button>
       </div>
 
       <!-- 4. Work Experience -->
       <div class="card">
-        <div class="section-title"><span class="num">IV</span><h2>Work Experience</h2></div>
-        <div class="table-scroll">
-          <table class="gridtable" id="workExpTable">
-            <thead><tr>
-              <th>School / Institution</th><th>Designation</th><th>From</th><th>To</th><th>Subject / Class</th><th>Gross Salary</th><th></th>
-            </tr></thead>
-            <tbody id="workExpBody"></tbody>
-          </table>
-        </div>
-        <button type="button" class="btn-add" id="addWorkExpRow">+ Add row</button>
+        <div class="section-title"><span class="emoji">💼</span><h2>4. Work Experience</h2></div>
 
-        <div class="field" style="margin-top:16px;">
-          <label>Total Work Experience</label>
-          <div class="row3">
-            <div>
-              <label style="font-weight:400;font-size:.78rem;">Teaching (yrs)</label>
-              <input type="number" id="expTeaching" min="0" step="0.5" value="0">
-            </div>
-            <div>
-              <label style="font-weight:400;font-size:.78rem;">Administrative (yrs)</label>
-              <input type="number" id="expAdmin" min="0" step="0.5" value="0">
-            </div>
-            <div>
-              <label style="font-weight:400;font-size:.78rem;">Any Other (yrs)</label>
-              <input type="number" id="expOther" min="0" step="0.5" value="0">
-            </div>
+        <div class="exp-block">
+          <div class="exp-label">📌 Experience 1</div>
+          <div class="row2">
+            <div class="field"><label>Institution</label><input type="text" id="exp1Inst"></div>
+            <div class="field"><label>Designation</label><input type="text" id="exp1Desig"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label>Duration</label><input type="text" id="exp1Duration" placeholder="e.g. Jun 2021 – Mar 2023"></div>
+            <div class="field"><label>Salary Drawn</label><input type="text" id="exp1Salary"></div>
+          </div>
+        </div>
+
+        <div class="exp-block">
+          <div class="exp-label">📌 Experience 2</div>
+          <div class="row2">
+            <div class="field"><label>Institution</label><input type="text" id="exp2Inst"></div>
+            <div class="field"><label>Designation</label><input type="text" id="exp2Desig"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label>Duration</label><input type="text" id="exp2Duration"></div>
+            <div class="field"><label>Salary Drawn</label><input type="text" id="exp2Salary"></div>
+          </div>
+        </div>
+
+        <div class="exp-block">
+          <div class="exp-label">📌 Experience 3</div>
+          <div class="row2">
+            <div class="field"><label>Institution</label><input type="text" id="exp3Inst"></div>
+            <div class="field"><label>Designation</label><input type="text" id="exp3Desig"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label>Duration</label><input type="text" id="exp3Duration"></div>
+            <div class="field"><label>Salary Drawn</label><input type="text" id="exp3Salary"></div>
           </div>
         </div>
       </div>
 
       <!-- 5. Achievements -->
       <div class="card">
-        <div class="section-title"><span class="num">V</span><h2>Achievements</h2></div>
+        <div class="section-title"><span class="emoji">🏆</span><h2>5. Achievements</h2></div>
         <div class="table-scroll">
           <table class="gridtable" id="achieveTable">
-            <thead><tr><th>Particular</th><th>Details Attached?</th><th>Details</th></tr></thead>
-            <tbody id="achieveBody"><!-- injected --></tbody>
+            <thead><tr><th>Particular</th><th>Attached?</th><th>Details</th></tr></thead>
+            <tbody id="achieveBody"></tbody>
           </table>
         </div>
       </div>
 
-      <!-- 6. Compensation & Availability -->
+      <!-- 6. Salary & Other Details -->
       <div class="card">
-        <div class="section-title"><span class="num">VI</span><h2>Compensation & Availability</h2></div>
+        <div class="section-title"><span class="emoji">💰</span><h2>6. Salary & Other Details</h2></div>
         <div class="field">
-          <label>Minimum Salary Expected (Rs. per month) <span class="req">*</span></label>
+          <label>Current Salary (Rs. per month)</label>
+          <input type="number" id="currentSalary" min="0">
+        </div>
+        <div class="field">
+          <label>Minimum Salary Expected (per month) <span class="req">*</span></label>
           <input type="number" id="minSalary" min="0" required>
         </div>
         <div class="field">
-          <label>If selected, how much time would you need to join? <span class="req">*</span></label>
-          <select id="joiningTime" required>
+          <label>Time needed to join (if selected)</label>
+          <select id="joiningTime">
             <option value="">-- Select --</option>
             <option>Immediately</option>
             <option>Within 15 days</option>
@@ -262,37 +270,48 @@
           </select>
         </div>
         <div class="field">
-          <label>Preferred Post Type <span class="req">*</span></label>
-          <select id="postType" required>
-            <option value="">-- Select --</option>
-            <option>Residential</option>
-            <option>Non-Residential</option>
+          <label>Transportation or Own Arrangement <span class="req">*</span></label>
+          <select id="transport" required>
+            <option value="">Select Option</option>
+            <option>Own Arrangement</option>
+            <option>School Transport</option>
+            <option>Both</option>
           </select>
         </div>
       </div>
 
-      <!-- 7. Declaration & Signature -->
+      <!-- 7. Photograph -->
       <div class="card">
-        <div class="section-title"><span class="num">VII</span><h2>Declaration & Signature</h2></div>
+        <div class="section-title"><span class="emoji">📸</span><h2>7. Passport Photograph</h2></div>
+        <label class="photo-upload" id="photoUploadLabel">
+          <span id="photoUploadText">📸 Tap to upload / take photo</span>
+          <img id="photoPreview" style="display:none;">
+          <input type="file" id="photoInput" accept="image/*" capture="environment" style="display:none;">
+        </label>
+      </div>
+
+      <!-- 8. Declaration & Signature -->
+      <div class="card">
+        <div class="section-title"><span class="emoji">✍️</span><h2>8. Declaration & Signature</h2></div>
 
         <div class="declaration-box">
-          I hereby declare that all the information furnished above is true to the best of my knowledge and belief.
-          I will do all my duties to the best of my ability and follow the code of conduct of the institution, maintaining the required level of discipline as set by the institution.
+          <b>Declaration:</b> I hereby declare that all the information furnished above is true to the best of my knowledge and belief. I will do all my duties to the best of my ability and follow the code of conduct of the institution.
         </div>
 
-        <div class="checkline" style="margin-bottom:14px;">
+        <div class="checkline" style="margin-bottom:16px;">
           <input type="checkbox" id="declaration" required>
           <label for="declaration" style="font-weight:600;">I agree to the declaration above <span class="req">*</span></label>
         </div>
 
-        <div class="field">
-          <label>Place <span class="req">*</span></label>
-          <input type="text" id="place" required>
-        </div>
-
-        <div class="field">
-          <label>Date</label>
-          <input type="text" id="formDate" readonly>
+        <div class="row2">
+          <div class="field">
+            <label>Date</label>
+            <input type="text" id="formDate" readonly>
+          </div>
+          <div class="field">
+            <label>Place</label>
+            <input type="text" id="place" value="Khordha">
+          </div>
         </div>
 
         <div class="field">
@@ -306,7 +325,7 @@
       </div>
 
       <div class="submit-bar">
-        <button type="submit" class="primary" id="submitBtn">Submit Application</button>
+        <button type="submit" class="primary" id="submitBtn">📩 Submit Application</button>
         <div class="status-msg" id="statusMsg"></div>
       </div>
 
@@ -314,11 +333,10 @@
   </div>
 
   <div id="successStage" class="success-screen" style="display:none;">
-    <div class="tick">&#10003;</div>
-    <h2>Application Submitted</h2>
-    <p>Thank you, <span id="successName"></span>. Your biodata has been received.<br>
-    Our HR team will print your form and share it with the interview panel.</p>
-    <p style="margin-top:18px;"><button class="primary" style="width:auto;padding:10px 24px;" onclick="location.reload()">Submit Another Form</button></p>
+    <div class="tick">✅</div>
+    <h2>Form submitted successfully!</h2>
+    <p>We will contact you soon.</p>
+    <p style="margin-top:18px;"><button class="primary" style="width:auto;padding:12px 26px;" onclick="location.reload()">Submit Another Form</button></p>
   </div>
 
 </div>
